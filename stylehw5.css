@@ -1,0 +1,40 @@
+*{
+ background-color: skyblue;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: medium;
+ text-align: center;
+
+}
+
+body{
+
+  width:96%;
+  margin:0,auto;
+  text-align: center;
+ }
+
+#content{
+  overflow: auto;
+}
+
+#content,#nav,#footer{
+  width:31%;
+  float:left;
+  margin:1;
+}
+
+#columns1, #columns2,#columns3{
+  position:float;
+  width:10px;
+  margin:10px;
+}
+
+#contents{
+  background-color: white;
+  margin: 0rem;
+}
+
+#li{
+  display:inline;
+  margin-left: 10em;
+}
