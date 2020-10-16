@@ -70,15 +70,25 @@
   </div>
 
 <script type="text/javascript">
-    // var questiontag = document.q( 'startbtn' );
+// var questiontag = document.q( 'startbtn' );
     // questiontag.item.name="test";
-
-    // var answerElem = document.getElementsByClassName('answer');
-
+    // var answerElem = document.getElementsByCla,ssName('answer');
     // for ( i =0; i < answerElem.length; i++)
     //     answerElem[i].value="test";
-
     // questiontag.text = "test";
+    function updateTimed() {
+
+        // $('.h3tag'). = "correct answer";
+        var dat = new Date();
+        time = dat.getTime();
+        console.log( "time" +time );
+        // $('.h3tag').value = "correct answer"+time;
+         $('h2').empty();
+         $('h2').append("Timer: " + time);
+
+        setTimeout( updateTimed, 5*60);
+      }
+
     quizquestions={ "1:":{"what is the name of the cats neck muscle 1":["cephalo humeral","answer2","answer3", "answer4"]},
                     "2:": { "what is the name of the cats feet bone 2": [" humeral", "answer2", "answer3", "answer4"]},
                     "3:": { "what is the name of the cats  bone 3": ["cephalo", "answer2", "answer3", "answer4"]},
@@ -87,6 +97,8 @@
 
     // $("#nameclass").text("data");
     // console.log(nameclass+($("#nameclass").val( )));
+    // setTimeout(timefunc( ) , 10000);
+
     $(startbtn).on('click',function(){
       clear();
     });
@@ -118,9 +130,18 @@
     // }
     // $('.h3tag').value = "correct answer";
 
-    sessionStorage.setItem("question", sessionStorage.getItem("question")+1);
+    sessionStorage.setItem("question", parseInt(0));
+    // setTimeout(func, 3000);
+    // function func( ){
+    //   console.log(date.getTime( ));
+    //   // $('h2').append("test");
+    //   // $('h2').empty();
+
+    //   // $('.h3tag').value = "correct answer";
+    // }
+
     function checkanswer(){
-      $('.h3tag').value="correct answer";
+      $('.h3tag').value = "correct answer";
     }
 
     function clear () {
@@ -132,34 +153,45 @@
        clear();
     });
 
+
     $('li').on( 'click' , function() {
       textlen = $('li').length;
-      sessionStorage.setItem("question", sessionStorage.getItem("question") + 1);
-      $('#questions1').append("test");
 
-      console.log( questions[1]);
-      console.log( answer[0]+"   "+answer[1]+"  "+answer[2]+"  "+answer[3] +"  ");
+      sessionStorage.setItem("question", sessionStorage.getItem("question"));
+      console.log( questions[sessionStorage.getItem("question")]);
+      console.log( answer[sessionStorage.getItem("question")]+"   "+answer[1]+"  "+answer[2]+"  "+answer[3] +"  ");
 
-      $('#questions1').add( questions[3]);
-      $('#questions1').add(questions[sessionStorage.getItem("question") + 1]);
+      // $('#questions1').add( questions[3]);
+      $('p').empty();
+      $('p').append(questions[(sessionStorage.getItem("question"))]);
 
       $('h5').empty();
       $('h5').append("Got the correct answer" + sessionStorage.getItem("question"));
-      sessionStorage.setItem("question",1);
-      $('li').add((answer[((sessionStorage.getItem("question")) * 5)]));
-      $('li').add((answer[((sessionStorage.getItem("question")) * 5)]));
-      $('li').add((answer[((sessionStorage.getItem("question")) * 5)]));
-      $('li').add((answer[((sessionStorage.getItem("question")) * 5)]));
-      $('li').add((answer[((sessionStorage.getItem("question")) * 5)]));
 
+      // localStorage.setItem("question", localStorage.getItem("question") + 1);
+      var a = answer.slice((sessionStorage.getItem("question"), 5* sessionStorage.getItem("question")));
+      console.log("alength"+a);
+       $('li').empty();
+      for (var i=0; i< a.length; i++){
+        $('li').append(a);
+       }
+
+
+      if(parseInt(sessionStorage.getItem("question")) + 1 < 5 ){
+          sessionStorage.setItem("question", parseInt(sessionStorage.getItem("question"))+1);
+
+      }
+      else{
+        sessionStorage.setItem("question", parseInt(0));
+      }
+
+      // console.log($('li').val());
+      // sessionStorage.clear();
       // $('h2').val();
       // updatetimer( );
-      $('h2').empty();
-      // ::setTimeout(,3000)
 
-      $('h2').append("Timer: 1220202");
-      $('h2').empty();
-      $('h2').append("Timer: 1220202");
+      // $('h2').empty();
+      // $('h2').append("Timer: 1220202");
       $('h5').empty();
       $('h5').append("Got the correct answer! ");
 
@@ -175,11 +207,13 @@
     $('noback').on('click', function () {
         textlen = $('li').length;
         text = "";
+
         text += "</br>" + quizquestions['i'];
         checkanswer();
         sessionData = i;
         $(this).append(text);
       });
+
 </script>
 </body>
 <footer>
@@ -188,3 +222,4 @@
   </div>
 </footer>
 </html>
+
