@@ -111,16 +111,19 @@
 		
 		
 		$('#test1').on('click',function() {
-			console.log("calander data for time 11AM "+ $('#test1').val());
+			console.log("calander data for time "+ $('#time data1').val() + $('#test1').val());
 			localstorage.set("time 1" ,('#test1').val());
-		     
+			
+		     console.log("calander data for time "+ $('#time data1').val() + $('#test1').val());
 		});
 		
 		$('#test2').on('click',function() {
 
-			console.log("calander data for time 12AM "+ $('#test2').val());
+			').val() + $('#test2').val());
+			console.log("calander data for time $('#time data2').val() + $('#test2').val());
 			localstorage.set("#time4" , $('#test2').val());
 			
+			console.log("calander data for time "+ $('#time data2').val() + $('#test2').val());
 			
 		});
 		
@@ -128,41 +131,63 @@
 			console.log("calander data for time 13AM "+ $('#test3').val());
 			localstorage.set("#time4" , $('#test3').val());
 			
+			console.log("calander data for time "+ $('#time data3').val() + $('#test3').val());
+			
 		});
 		$('#test4').on('click',function() {qqqqq																																																																																
 			console.log("calander data for time 14AM "+ $('#test4').val());
 			localstorage.set("#time4" , $('#test4').val());
 			
+			console.log("calander data for time "+ $('#time data4').val() + $('#test4').val());
 		});
 		
 		$('#test5').on('click',function() {
 			console.log("calander data for time 15AM "+ $('#test5').val());
 			localstorage.set("#time5" , $('#test5').val());
 			
+			console.log("calander data for time "+ $('#time data5').val() + $('#test5').val());
+			
 		});
 		
 		$('#test6').on('click',function() {
 			console.log("calander data for time 15AM "+ $('#test6').val());
+			
 			localstorage.set("#time 6" , $('#test6').val());
+			
+			console.log("calander data for time "+ $('#time data6').val() + $('#test6').val());
 		});
 		$('#test7').on('click',function() {
 			localstorage.set("", 
 			console.log("calander data for time 16AM "+ $('#test7').val());
+			
+			console.log("calander data for time "+ $('#time data7').val() + $('#test7').val());
 		});
 		
 		
+		('#test1').value = localstorage.get("#time 1" );
+		console.log("calander data for time 16AM "+ $('#test2').val());
+		
 		('#test2').value = localstorage.get("time 2" );
-		console.log("calander data for time 16AM "+ $('#test7').val());
+		console.log("calander data for time 16AM "+ $('#test2').val());
 		('#test3').value = localstorage.get("time 3" );
-		console.log("calander data for time 16AM "+ $('#test7').val());
+		console.log("calander data for time 16AM "+ $('#test3).val());
 		('#test4').value = localstorage.get("time 4" );
-		console.log("calander data for time 16AM "+ $('#test7').val());
+		console.log("calander data for time 16AM "+ $('#test4').val());
 		('#test5').value = localstorage.get("time 5" );
-		console.log("calander data for time 16AM "+ $('#test7').val());
+		console.log("calander data for time 16AM "+ $('#test5').val());
 		('#test6').value = localstorage.get("time 6" );
-		console.log("calander data for time 16AM "+ $('#test7').val());
+		console.log("calander data for time 16AM "+ $('#test6').val());
 		('#test7').value = localstorage.get("time 6" );
 		console.log("calander data for time 16AM "+ $('#test7').val());
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	
