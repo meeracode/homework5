@@ -42,7 +42,7 @@
         <div id = "time data" class="hour col-1">
           11AM
         </div>
-        <textarea id ="test1" rows="2" class="past description col-10"></textarea>
+        <textarea id ="test1" rows="2" class="past description col-10"> ""</textarea>
         <button class="saveBtn">
           <i class="fas fa-save"></i>
         </button>
@@ -51,7 +51,7 @@
         <div id = "time data1" class="hour col-1">
           12AM
         </div>
-        <textarea id="test2" rows="2" class="past description col-10"></textarea>
+        <textarea id="test2" rows="2" class="past description col-10"> </textarea>
         <button class="saveBtn">
           <i class="fas fa-save"></i>
         </button>
@@ -60,7 +60,7 @@
         <div id = "time data2" class="hour col-1">
           13AM
         </div>
-        <textarea id ="test3" rows="2" class="past description col-10"></textarea>
+        <textarea id ="test3" rows="2" class="past description col-10"> </textarea>
         <button class="saveBtn">
           <i class="fas fa-save"></i>
         </button>
@@ -103,85 +103,124 @@
       </div>
     </div>
 	<script>
-		console.log("data");
-		console.log( "dat");
-
-		$('#test7').empty();
-	
-		console.log("this data"+$('#test7').val());
-		
 		
 		$('#test1').on('click',function() {
-			console.log("calander data for time "+ $('#time data1').val() + $('#test1').val());
-			localstorage.set("time 1" ,('#test1').val());
 			
-		     console.log("calander data for time "+ $('#time data1').val() + $('#test1').val());
+			console.log("calander data for time "+ $('#test1').val());
+			
+			if (  $('#test1').val() != 'Undefined'.toLowerCase())
+			{
+			$('#test1').color = "#efefef";
+			localStorage.setItem("time 1" ,$('#test1').val());
+			}
+					
+			
 		});
 		
 		$('#test2').on('click',function() {
-
-			').val() + $('#test2').val());
-			console.log("calander data for time $('#time data2').val() + $('#test2').val());
-			localstorage.set("#time4" , $('#test2').val());
+		
+			if (  $('#test2').val() != 'Undefined'.toLowerCase())
+			{
+			localStorage.setItem("#time2" , $('#test2').val());
 			
-			console.log("calander data for time "+ $('#time data2').val() + $('#test2').val());
+			console.log("calander data for time2" +  $('#test2').val());
 			
+			localStorage.setItem("#time2" , $('#test2').val());
+			}
+			
+					
 		});
 		
 		$('#test3').on('click',function() {
-			console.log("calander data for time 13AM "+ $('#test3').val());
-			localstorage.set("#time4" , $('#test3').val());
+		
 			
-			console.log("calander data for time "+ $('#time data3').val() + $('#test3').val());
+			if (  $('#test3').val() != 'Undefined'.toLowerCase()){
+				localStorage.setItem("#time3" , $('#test3').val());
+			
+			console.log("calander data for time "+  $('#test3').val());
+			}
 			
 		});
-		$('#test4').on('click',function() {qqqqq																																																																																
-			console.log("calander data for time 14AM "+ $('#test4').val());
-			localstorage.set("#time4" , $('#test4').val());
+		$('#test4').on('click',function() {																																																																																
 			
-			console.log("calander data for time "+ $('#time data4').val() + $('#test4').val());
+			
+			if (  $('#test4').val() != 'Undefined'.toLowerCase())
+			{
+				localStorage.setItem("#time4" , $('#test4').val());
+			
+			
+			console.log("calander data for time "+  $('#test4').val());
+			}
 		});
 		
 		$('#test5').on('click',function() {
-			console.log("calander data for time 15AM "+ $('#test5').val());
-			localstorage.set("#time5" , $('#test5').val());
 			
-			console.log("calander data for time "+ $('#time data5').val() + $('#test5').val());
+			
+			if (  $('#test5').val() != 'Undefined'.toLowerCase()){
+	
+			localStorage.setItem("#time5" , $('#test5').val());		
+			
+			console.log("calander data for time 5"+  + $('#test5').val());
+			}
 			
 		});
 		
 		$('#test6').on('click',function() {
-			console.log("calander data for time 15AM "+ $('#test6').val());
 			
-			localstorage.set("#time 6" , $('#test6').val());
+			if (  $('#test6').val() != 'Undefined'.toLowerCase()){
+			localStorage.setItem("#time 6" , $('#test6').val());
 			
-			console.log("calander data for time "+ $('#time data6').val() + $('#test6').val());
+			
+			console.log("calander data for time "+  $('#test6').val());
+			}
 		});
 		$('#test7').on('click',function() {
-			localstorage.set("", 
-			console.log("calander data for time 16AM "+ $('#test7').val());
+
+			if (  $('#test7').val() != 'Undefined'.toLowerCase()){
+			localStorage.setItem("#time 7" , $('#test7').val());
 			
-			console.log("calander data for time "+ $('#time data7').val() + $('#test7').val());
+			console.log("calander data for time "+  + $('#test7').val());
+			}
 		});
 		
 		
-		('#test1').value = localstorage.get("#time 1" );
-		console.log("calander data for time 16AM "+ $('#test2').val());
-		
-		('#test2').value = localstorage.get("time 2" );
-		console.log("calander data for time 16AM "+ $('#test2').val());
-		('#test3').value = localstorage.get("time 3" );
-		console.log("calander data for time 16AM "+ $('#test3).val());
-		('#test4').value = localstorage.get("time 4" );
-		console.log("calander data for time 16AM "+ $('#test4').val());
-		('#test5').value = localstorage.get("time 5" );
-		console.log("calander data for time 16AM "+ $('#test5').val());
-		('#test6').value = localstorage.get("time 6" );
-		console.log("calander data for time 16AM "+ $('#test6').val());
-		('#test7').value = localstorage.get("time 6" );
-		console.log("calander data for time 16AM "+ $('#test7').val());
 		
 		
+		
+		if (  $('#test1').val() != 'Undefined'.toLowerCase()){
+		('#test2').value = localStorage.getItem("#time 1" );
+		console.log("calander data for time "+ $('#test2').val());
+		}
+		
+		if (  $('#test3').val() != 'Undefined'.toLowerCase()){
+		('#test3').value = localStorage.getItem("test3" );
+		console.log("calander data for time  "+ $('#test3').val());
+		}
+		
+		if (  $('#test4').val() != 'undefined' ){
+		('#test4').value = localStorage.getItem("#test4" );
+		console.log("calander data for time  "+ $('#test4').val());
+		}
+		
+		if (  $('#test5').val() != 'undefined'){
+		('#test5').value = localStorage.getItem("test5" );
+		console.log("calander data for time  "+ $('#test5').val());
+			
+		}
+		
+		if (  $('#test6').val() != 'Undefined'.toLowerCase()){
+		
+		
+		('#test6').value = localStorage.getItem("test6" );	
+		console.log("calander data for time "+ $('#test6').val());
+		}
+		
+		if (  $('#test7').val() != 'Undefined'){
+		
+		('#test7').value = localStorage.getItem("test7");
+		console.log("calander data for time  "+ $('#test7').val());
+		
+		}
 		
 		
 		
